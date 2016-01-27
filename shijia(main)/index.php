@@ -1,7 +1,7 @@
 <?php
 include_once('conn.php');
-    $appid = "wx46fdb9fe3fd99085";  
-    $secret = "1c76215ebc53bd08194371dea2b2d85a";  
+    $appid = "";  
+    $secret = "";  //这两样东西都可以在微信公众平台的后台找到，不过需要管理员的最高权限才能知道
     $code = $_GET["code"];  
     $get_token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$appid.'&secret='.$secret.'&code='.$code.'&grant_type=authorization_code';  
     function https_request($url, $data = null) //url 请求函数
