@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<title>十佳大学生候选人资料上传</title>
+<script>
+function InputCheck(student)
+{
+	if (student.upfile.value == "")
+	{
+		alert("未选择图片");
+		student.upfile.focus();
+		return(false);
+	}
+	if (student.name.value == "")
+	{
+		alert("用户名不能为空！");
+		student.name.focus();
+		return(false);
+	}
+	if (student.academy.value == "")
+	{
+		alert("学院不能为空！");
+		student.academy.focus();
+		return(false);
+	}
+	if (student.class.value == "")
+	{
+		alert("专业班级不能为空！");
+		student.class.focus();
+		return(false);
+	}
+	if (student.schoolid.value == "")
+	{
+		alert("学号不能为空！");
+		student.schoolid.focus();
+		return(false);
+	}
+	if (student.summary.value == "")
+	{
+		alert("个人简介不能为空！");
+		student.summary.focus();
+		return(false);
+	}
+
+}
+</script>
+</head>
+<body>
+<div class="container-fluid" style="text-align:center;">
+	<h1>十佳大学生候选人信息登记</h1>
+</div>
+<form class="form-horizontal container-fluid" action="insert.php" enctype="multipart/form-data" method="post" name="student" onsubmit="return InputCheck(this)">
+<div class="form-group">
+	<label class="col-sm-2 col-md-2 col-lg-2">照片：</label>
+
+	<div class="col-sm-10 col-md-10 col-lg-10">
+		<input id="exampleInputFile"type="file" name="upfile" /> 
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 col-md-2 col-lg-2">姓名：</label>
+
+	<div class="col-sm-10 col-md-10 col-lg-10">
+		<input class="form-control" name="name" type="text" />
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 col-md-2 col-lg-2">学院：</label>
+
+	<div class="col-sm-10 col-md-10 col-lg-10">
+		<input class="form-control" name="academy" type="text" />
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 col-md-2 col-lg-2">专业班级：</label>
+
+	<div class="col-sm-10 col-md-10 col-lg-10">
+		<input class="form-control" name="class" type="text" />
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 col-md-2 col-lg-2">学号：</label>
+
+	<div class="col-sm-10 col-md-10 col-lg-10">
+		<input class="form-control" name="schoolid" type="text" />
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 col-md-2 col-lg-2">个人简介:</label>
+
+	<div class="col-sm-10 col-md-10 col-lg-10">
+		<textarea class="form-control" name="summary" rows="15"></textarea>
+	</div>
+</div>
+
+	<input class="btn btn-primary btn-lg btn-block" name="tijiao" type="submit" value="提交">
+</form>
+</body>
+</html>
